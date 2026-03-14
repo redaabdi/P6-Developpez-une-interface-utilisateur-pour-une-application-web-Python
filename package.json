@@ -1,0 +1,23 @@
+{
+  "name": "p6",
+  "version": "1.0.0",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redaa91ab/P6-Developpez-une-interface-utilisateur-pour-une-application-web-Python.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redaa91ab/P6-Developpez-une-interface-utilisateur-pour-une-application-web-Python/issues"
+  },
+  "homepage": "https://github.com/redaa91ab/P6-Developpez-une-interface-utilisateur-pour-une-application-web-Python#readme",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^4.2.1"
+  }
+}
