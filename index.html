@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>JustStreamIt</title>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
         <!-- HEADER -->
-        <div id="first-header">
+        <section id="first-header">
             <img src="images/logo.png" alt="logo">
-            <h2>Vidéos à la demande</h2>
-        </div>
+            <h3>Vidéos à la demande</h3>
+        </section>
 
 
         <!-- Meilleur film -->
@@ -20,9 +20,11 @@
             <h2>Meilleur film</h2>
             <article id="big-movie-card">
                 <img src="images/lorempic.jpg" alt="bestmovie">
-                <h2>Lorem ipsum dolor</h2>
-                <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
-                <button>Détails</button>
+                <div class="movie-info">
+                    <h2>Lorem ipsum dolor</h2>
+                    <p class="short-synopsis">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
+                    <button>Détails</button>
+                </div>
             </article>
         </section>
 
@@ -31,40 +33,36 @@
         <section class="category">
             <h2>Films les mieux notés</h2>
             <div class="movie-list">
-                <article class="mini-movie-card">
+                <article class="movie1">
                     <img src="images/lorempic2.jpg" alt="film1">
-                    <h2>Lorem ipsum dolor</h2>
-                    <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
-                    <button>Détails</button>
+                    <div class="transparent-rectangle">
+                        <h4>Lorem ipsum</h4>
+                        <!--<button>Détails</button>!-->
+                    </div>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie2">
                     <img src="images/lorempic3.jpg" alt="film2">
                     <h2>Lorem ipsum dolor</h2>
-                    <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie3">
                     <img src="images/lorempic.jpg" alt="film3">
                     <h2>Lorem ipsum dolor</h2>
-                    <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie4">
                     <img src="images/lorempic2.jpg" alt="film4">
                     <h2>Lorem ipsum dolor</h2>
-                    <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie5">
                     <img src="images/lorempic3.jpg" alt="film5">
                     <h2>Lorem ipsum dolor</h2>
-                    <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie6">
                     <img src="images/lorempic.jpg" alt="film6">
                     <h2>Lorem ipsum dolor</h2>
-                    <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
             </div>
@@ -75,37 +73,37 @@
         <section class="category">
             <h2>Mystery</h2>
             <div class="movie-list">
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film1">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film2">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film3">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film4">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film5">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film6">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
@@ -118,37 +116,37 @@
         <section class="category">
             <h2>Science fiction</h2>
             <div class="movie-list">
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film1">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film2">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film3">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film4">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film5">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film6">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
@@ -172,37 +170,37 @@
                 <option value="western">Westerns</option>
             </select>
             <div id="movie-list">
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film1">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film2">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film3">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film4">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film5">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film6">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
@@ -225,37 +223,37 @@
                 <option value="western">Westerns</option>
             </select>
             <div id="movie-list">
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film1">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film2">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film3">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic2.jpg" alt="film4">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic3.jpg" alt="film5">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
                     <button>Détails</button>
                 </article>
-                <article class="mini-movie-card">
+                <article class="movie-card">
                     <img src="images/lorempic.jpg" alt="film6">
                     <h2>Lorem ipsum dolor</h2>
                     <p class="movie-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
