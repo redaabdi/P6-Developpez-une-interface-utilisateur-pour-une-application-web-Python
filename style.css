@@ -47,11 +47,11 @@ body {
     letter-spacing: 0%;
     color: black;
 }
+
 #big-movie-card img {
     height: 334px;
     width: 227px;
 }
-
 #big-movie-card {
     min-height: 369px;
     padding-left : 17.5px ;
@@ -61,7 +61,6 @@ body {
     align-items: center;
 
 }
-
 #big-movie-card .movie-info {
     height: 334px;
     box-sizing: border-box;
@@ -71,11 +70,9 @@ body {
     padding: 17.5px;
 
 }
-
 #big-movie-card .movie-info h2 {
     margin-top: 0;
 }
-
 #big-movie-card .movie-info button {
     width: 166px ;
     height: 68px;
@@ -95,7 +92,6 @@ body {
     vertical-align: middle ;
     
 }
-
 #big-movie-card .short-synopsis {
     font-family: 'Oswald';
     font-weight: 200;
@@ -105,7 +101,6 @@ body {
     vertical-align: middle ;
     color: black;
 }
-
 
 
 .movie-list {
@@ -152,6 +147,8 @@ body {
 }
 
 .transparent-rectangle button {
+    position : absolute ;
+    right : 15px ;
     font-size: 14px ;
     color: white ;
     background-color: rgb(45, 44, 44, 1);
@@ -170,10 +167,8 @@ body {
     border-color: rgb(45, 44, 44, 1);
     display: flex ;
     align-self: flex-end;
-    justify-content: center ;
+    justify-content: center  ;
     align-items: center;
-    
-
 }
 
 .category #autres-select {
