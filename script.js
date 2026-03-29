@@ -27,6 +27,24 @@ async function GetDetailsMovie(url_movie) {
     return details_movie
 }
 
+async function FillMoviesBox(movies_box_html, movies_url) {
+    movies_box_html.forEach(async function(movie_box_html, i) {
+        if (movies_url[i]) {
+            movie_box_html.style.display = "block"
+            let movie_data = await GetDetailsMovie(movies_url[i])
+            movie_box_html.querySelector("h4").textContent = movie_data["title"]
+            const image_html = movie_box_html.querySelector("img")
+            image_html.src = movie_data["image_url"]
+            image_html.addEventListener("error", () => {
+                image_html.src = "images/image_not_found.jpeg";
+        })
+        }
+        else {
+            movie_box_html.style.display = "none"
+        }
+    })
+}
+
 async function FillBestMovie(url_api) {
     const movie_url = await GetBestMoviesURL(url_api + "?sort_by=-imdb_score", 1)
     const details_movie = await GetDetailsMovie(movie_url)
@@ -36,61 +54,47 @@ async function FillBestMovie(url_api) {
     short_description.textContent = details_movie["description"]
     const image = document.querySelector("#big-movie-card img")
     image.src = details_movie["image_url"]
-    image.addEventListener("error", () => {
+    image.addEventListener("error", function() {
         image.src = "images/image_not_found.jpeg";
     })
 }
 
 async function FillTopRatedMovies(url_api) {
-    let top_rated_movies = await GetBestMoviesURL(url_api + "?sort_by=-imdb_score",7)
-    top_rated_movies = top_rated_movies.slice(1)
-
-    const movies_boxes_html = document.querySelectorAll("#top-rated .movie-box") 
-    for (let i=0; i < 6 ; i++) {
-        let movie_data = await GetDetailsMovie(top_rated_movies[i])
-        let title = movie_data["title"]
-        let image_url = movie_data["image_url"]
-        movie_box = movies_boxes_html[i]
-        movie_box.querySelector("h4").textContent = title
-        const image_html = movie_box.querySelector("img")
-        image_html.src = image_url
-        image_html.addEventListener("error", () => {
-            image_html.src = "images/image_not_found.jpeg";
-        })
-    }
+    let movies_url  = await GetBestMoviesURL(url_api + "?sort_by=-imdb_score",7)
+    movies_url = movies_url.slice(1)
+    const movies_box_html = document.querySelectorAll(".top-rated .movie-box") 
+    await FillMoviesBox(movies_box_html, movies_url)
 }
 
-async function FillCategories() {
-    let top_rated_movies = await GetMoviesURL("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score",7)
-    top_rated_movies = top_rated_movies.slice(1)
+async function FillCategories(url_api) {
+    const all_categories_html = document.querySelectorAll(".category")    
+    for (const category_html of all_categories_html) {
+        let category_name
+        if (category_html.id === "others" || category_html.id == "second-others") {
+            const select = category_html.querySelector(".category-select")
+            category_name = select.value
+            select.addEventListener("change", async function() {
+                category_name = select.value
+                movies_url = await GetBestMoviesURL(url_api + "?sort_by=-imdb_score&genre=" + category_name, 6)
+                movies_box_html = category_html.querySelectorAll(".movie-box")
+                await FillMoviesBox(movies_box_html, movies_url)
+            })
+        }
+        else {
+            category_name = category_html.id
+        }
 
-    const movies_boxes_html = document.querySelectorAll("#top-rated .movie-box") 
-    for (let i=0; i < 6 ; i++) {
-        let movie_data = await GetDetailsMovie(top_rated_movies[i])
-        let title = movie_data["title"]
-        let image_url = movie_data["image_url"]
-        movie_box = movies_boxes_html[i]
-        movie_box.querySelector("h4").textContent = title
-        const image_html = movie_box.querySelector("img")
-        image_html.src = image_url
-        image_html.addEventListener("error", () => {
-            image_html.src = "images/image_not_found.jpeg";
-        })
+        movies_url = await GetBestMoviesURL(url_api + "?sort_by=-imdb_score&genre=" + category_name, 6)
+        movies_box_html = category_html.querySelectorAll(".movie-box")
+        await FillMoviesBox(movies_box_html, movies_url)
     }
 }
-
-
-
-
-
 
 async function main() {
     const url_api = "http://localhost:8000/api/v1/titles/"
     await FillBestMovie(url_api)
     await FillTopRatedMovies(url_api)
+    await FillCategories(url_api)
 }
 
 main()
-
-//http://localhost:8000/api/v1/titles/?&sort_by=-imdb_score
-//http://localhost:8000/api/v1/titles/?&sort_by=-imdb_score&genre=Mystery
