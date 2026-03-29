@@ -175,7 +175,7 @@ h2 {
     align-items: center;
 }
 
-.category #others-select {
+.genre #name {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -183,7 +183,7 @@ h2 {
 
 }
 
-.category #others-select .category-select {
+.genre #name .select {
     height: 70px;
     font-family: "Oswald";
     font-size: 36px;
