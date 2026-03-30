@@ -47,11 +47,11 @@ async function FillMoviesBox(movies_box_html, movies_url) {
 async function FillBestMovie(url_api) {
     const movie_url = await GetMoviesCategory(url_api + "?sort_by=-imdb_score", 1)
     const details_movie = await GetDetailsMovie(movie_url)
-    const h2 = document.querySelector("#big-movie-card .movie-info h2")
+    const h2 = document.querySelector("#big-movie-box .movie-info h2")
     h2.textContent = details_movie["title"]
-    const short_description = document.querySelector("#big-movie-card .movie-info p")
+    const short_description = document.querySelector("#big-movie-box .movie-info p")
     short_description.textContent = details_movie["description"]
-    const image = document.querySelector("#big-movie-card img")
+    const image = document.querySelector("#big-movie-box img")
     image.src = details_movie["image_url"]
     image.addEventListener("error", function() {
         image.src = "images/image_not_found.jpeg";
@@ -61,7 +61,7 @@ async function FillBestMovie(url_api) {
 async function FillTopRatedMovies(url_api) {
     let movies_url  = await GetMoviesCategory(url_api + "?sort_by=-imdb_score",7)
     movies_url = movies_url.slice(1)
-    const movies_box_html = document.querySelectorAll(".top-rated .movie-box") 
+    const movies_box_html = document.querySelectorAll("#top-rated .movie-box") 
     await FillMoviesBox(movies_box_html, movies_url)
 }
 
