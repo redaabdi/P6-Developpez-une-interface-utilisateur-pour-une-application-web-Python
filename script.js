@@ -26,23 +26,42 @@ async function GetDetailsMovie(url_movie) {
     return details_movie
 }
 
-async function FillMoviesBox(movies_box_html, movies_url) {
-    movies_box_html.forEach(async function(movie_box_html, i) {
-        if (movies_url[i]) {
-            movie_box_html.style.display = "block"
-            let movie_data = await GetDetailsMovie(movies_url[i])
-            movie_box_html.querySelector("h4").textContent = movie_data["title"]
-            const image_html = movie_box_html.querySelector("img")
-            image_html.src = movie_data["image_url"]
-            image_html.addEventListener("error", () => {
-                image_html.src = "images/image_not_found.jpeg";
-        })
-        }
-        else {
-            movie_box_html.style.display = "none"
-        }
-    })
+// async function CreateMoviesBox(movies_box_html, movies_url) {
+//     movies_box_html.forEach(async function(movie_box_html, i) {
+//         if (movies_url[i]) {
+//             // movie_box_html.style.display = "block"
+//             let movie_data = await GetDetailsMovie(movies_url[i])
+//             movie_box_html.querySelector("h4").textContent = movie_data["title"]
+//             const image_html = movie_box_html.querySelector("img")
+//             image_html.src = movie_data["image_url"]
+//             image_html.addEventListener("error", () => {
+//                 image_html.src = "images/image_not_found.jpeg";
+//         })
+//         }
+//         else {
+//             // movie_box_html.style.display = "none"
+//         }
+//     })
+// }
+
+async function CreateMoviesBox(genre_html, movies_url) {
+    for (const movie_url of movies_url) {
+        let movie_data = await GetDetailsMovie(movie_url)
+        const movie_list_html = genre_html.querySelector('.movie-list')
+        movie_list_html.innerHTML += `
+        <article class="movie-box">
+                <div class="transparent-rectangle">
+                    <h4>${movie_data["title"]}</h4>
+                    <button>Details</button>
+                </div>
+                <img src="${movie_data["image_url"]}"
+                onerror="this.src='images/image_not_found.jpeg'">
+        </article>
+    `
+    
+    }
 }
+
 
 async function FillBestMovie(url_api) {
     const movie_url = await GetMoviesCategory(url_api + "?sort_by=-imdb_score", 1)
@@ -61,9 +80,32 @@ async function FillBestMovie(url_api) {
 async function FillTopRatedMovies(url_api) {
     let movies_url  = await GetMoviesCategory(url_api + "?sort_by=-imdb_score",7)
     movies_url = movies_url.slice(1)
-    const movies_box_html = document.querySelectorAll("#top-rated .movie-box") 
-    await FillMoviesBox(movies_box_html, movies_url)
+    const top_rated_html = document.querySelector(".top-rated") 
+    await CreateMoviesBox(top_rated_html, movies_url)
 }
+
+// async function FillGenres(url_api) {
+//     const all_genres_html = document.querySelectorAll(".genre")    
+//     for (const genre_html of all_genres_html) {
+//         let genre_name
+//         if (genre_html.id === "others" || genre_html.id == "second-others") {
+//             const select = genre_html.querySelector(".select")
+//             genre_name = select.value
+//             select.addEventListener("change", async function() {
+//                 genre_name = select.value
+//                 movies_url = await GetMoviesCategory(url_api + "?sort_by=-imdb_score&genre=" + genre_name, 6)
+//                 movies_box_html = genre_html.querySelectorAll(".movie-box")
+//                 await CreateMoviesBox(movies_box_html, movies_url)
+//             })
+//         }
+//         else {
+//             genre_name = genre_html.id
+//         }
+//         movies_url = await GetMoviesCategory(url_api + "?sort_by=-imdb_score&genre=" + genre_name, 6)
+//         movies_box_html = genre_html.querySelectorAll(".movie-box")
+//         await CreateMoviesBox(movies_box_html, movies_url)
+//     }
+// }
 
 async function FillGenres(url_api) {
     const all_genres_html = document.querySelectorAll(".genre")    
@@ -75,18 +117,19 @@ async function FillGenres(url_api) {
             select.addEventListener("change", async function() {
                 genre_name = select.value
                 movies_url = await GetMoviesCategory(url_api + "?sort_by=-imdb_score&genre=" + genre_name, 6)
-                movies_box_html = genre_html.querySelectorAll(".movie-box")
-                await FillMoviesBox(movies_box_html, movies_url)
+                await CreateMoviesBox(genre_html, movies_url)
             })
         }
         else {
             genre_name = genre_html.id
         }
         movies_url = await GetMoviesCategory(url_api + "?sort_by=-imdb_score&genre=" + genre_name, 6)
-        movies_box_html = genre_html.querySelectorAll(".movie-box")
-        await FillMoviesBox(movies_box_html, movies_url)
+        
+        await CreateMoviesBox(genre_html, movies_url)
     }
 }
+
+
 
 async function main() {
     const url_api = "http://localhost:8000/api/v1/titles/"
