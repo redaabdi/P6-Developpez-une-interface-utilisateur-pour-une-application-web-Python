@@ -4,54 +4,54 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JustStreamIt</title>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
+    <div id="modal"></div>
     <body>
-
         <!-- HEADER -->
-        <section class="header">
+        <header class="header">
             <img src="images/logo.png" alt="logo">
             <h3 class="text">Videos on demand</h3>
-        </section>
+        </header>
 
         <!-- Meilleur film --> 
         <section class="category best-movie">
             <h2 class="text">Best movie</h2>
             <article id="big-movie-box">
-                <img src="images/lorempic.jpg" alt="bestmovie">
+                <img src="">
                 <div class="movie-info">
-                    <h2 class="text">Lorem ipsum dolor</h2>
-                    <p class="short-description text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
-                    <button class="text">Détails</button>
+                    <h2 class="text title"></h2>
+                    <p class="short-description text"></p>
+                    <button class="text btn-details">Détails</button>
                 </div>
             </article>
         </section>
 
         <!-- Films les mieux notés  -->
-        <section class="category top-rated">
+        <section class="category top-rated" id="top_rated">
             <h2 class="text">Top-rated movies</h2>
             <div class="movie-list"> </div>
             <button class="btn-see-more text">See more</button>
         </section>
 
         <!-- Mystery -->
-        <section class="category native" id="mystery">
+        <section class="category native genre" id="mystery">
             <h2 class="text">Mystery</h2>
             <div class="movie-list"> </div>
             <button class="btn-see-more text">See more</button>
         </section>
 
         <!-- Science fiction -->
-        <section class="category native" id="sci-fi">
+        <section class="category native genre" id="sci-fi">
             <h2 class="text">Science fiction</h2>
             <div class="movie-list"> </div>
             <button class="btn-see-more text">See more</button>
         </section>
 
         <!-- Autres -->
-        <section class="category others" id="others">
+        <section class="category others genre">
             <div id="name">
                 <h2 class="text">Others:</h2>
                 <select class="select text">
@@ -87,7 +87,7 @@
         </section>
 
         <!-- Others --> 
-        <section class="zone others" id="others">
+        <section class="category others genre">
             <div id="name">
                 <h2 class="text">Others:</h2>
                 <select class="select text">

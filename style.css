@@ -3,6 +3,94 @@ html {
     justify-content: center;
 }
 
+#modal {
+    display: none;
+}
+
+#modal.active {
+    display: block;
+    border: 6px black solid;
+    position: fixed;
+    display: flex;    
+    z-index: 1000;
+    background: rgba(255, 255, 255);
+    width: min(78vw, 837px) ;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+#modal .content {
+    padding: 7%;
+}
+
+#modal #close-button {
+    display: none;
+}
+
+
+
+#modal button {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+}
+
+
+#modal .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+#modal .top-left {
+    display: flex;
+    flex-direction: column;    
+}
+
+#modal .top-right {
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+
+#modal .bottom {
+    font-weight: 200;
+    font-size: 24px;
+}
+
+#modal h2 {
+    font-size: 48px;
+}
+
+#modal .bold {
+    font-weight: 600;
+}
+
+#directors .directed {
+    font-weight:400;
+    margin-bottom: 0;
+}
+
+#directors .directors-name {
+    margin: 0;
+}
+
+#modal .description {
+    margin-top: 0;
+}
+#modal .image {
+    width : 100%
+}
+
+#modal .top-left p,
+#modal .top-left h2 {
+    margin: 3px;
+}
+
+button {
+    cursor: pointer;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -42,7 +130,7 @@ body {
     align-items: center;
 }
 
-.category h2 {
+h2 {
     font-weight: 600;
     font-size: 32px;
     color: black;
@@ -63,7 +151,7 @@ body {
     object-fit: cover;
     aspect-ratio: 1/1;
     width: 90% ;
-    max-width: 90%;
+    max-width: 90%; 
 }
 
 #big-movie-box .movie-info {
@@ -224,6 +312,7 @@ body {
     }
     h2 {
         font-size: 40px;
+        align-self: flex-start;
     }
     #big-movie-box {
         flex-direction: row;
@@ -274,6 +363,7 @@ body {
     .header h3 {
         margin-left: 30px;
     }
+    
     h2 {
         font-size: 48px;
     }
@@ -298,4 +388,5 @@ body {
     .btn-see-more {
         display: none;
     }
+    
 }
