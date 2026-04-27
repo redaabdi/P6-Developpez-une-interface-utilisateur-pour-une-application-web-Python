@@ -8,23 +8,23 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
-    <div id="modal"></div>
     <body>
+        <div id="modal"></div>
         <!-- HEADER -->
         <header class="header">
             <img src="images/logo.png" alt="logo">
             <h3 class="text">Videos on demand</h3>
         </header>
 
-        <!-- Meilleur film --> 
+        <!-- Best movie --> 
         <section class="category best-movie">
             <h2 class="text">Best movie</h2>
             <article id="big-movie-box">
-                <img src="">
+                <img src="data:," alt="movie-image">
                 <div class="movie-info">
-                    <h2 class="text title"></h2>
+                    <h2 class="text title">Title</h2>
                     <p class="short-description text"></p>
-                    <button class="text btn-details">Détails</button>
+                    <button class="text btn-details">Details</button>
                 </div>
             </article>
         </section>
@@ -37,25 +37,25 @@
         </section>
 
         <!-- Mystery -->
-        <section class="category native genre" id="mystery">
+        <section class="category genre" id="mystery">
             <h2 class="text">Mystery</h2>
             <div class="movie-list"> </div>
             <button class="btn-see-more text">See more</button>
         </section>
 
         <!-- Science fiction -->
-        <section class="category native genre" id="sci-fi">
+        <section class="category genre" id="sci-fi">
             <h2 class="text">Science fiction</h2>
             <div class="movie-list"> </div>
             <button class="btn-see-more text">See more</button>
         </section>
 
         <!-- Autres -->
-        <section class="category others genre">
-            <div id="name">
+        <section class="category genre others">
+            <div class="name">
                 <h2 class="text">Others:</h2>
                 <select class="select text">
-                    <option value="Action"selected >Action</option>
+                    <option value="Action" selected >Action</option>
                     <option value="Adult">Adult</option>
                     <option value="Adventure">Adventure</option>
                     <option value="Animation">Animation</option>
@@ -87,8 +87,8 @@
         </section>
 
         <!-- Others --> 
-        <section class="category others genre">
-            <div id="name">
+        <section class="category genre others">
+            <div class="name">
                 <h2 class="text">Others:</h2>
                 <select class="select text">
                     <option value="Action">Action</option>

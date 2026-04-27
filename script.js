@@ -2,7 +2,6 @@ let all_data = {}
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("btn-details")) {
-        console.log(all_data)
         modal_html = document.getElementById('modal')
         modal_html.classList.add('active')
         const button = event.target;
@@ -27,7 +26,7 @@ document.addEventListener("click", (event) => {
             </div>
             <p class="description text">${data_movie["long_description"]}</p>
             <img class="image" src="${data_movie["image_url"]}"
-            onerror="this.src='images/image_not_found.jpeg'">            
+            onerror="this.src='images/image_not_found.jpeg'">      
             <p class="actors text">With: <br>
             ${data_movie["actors"].join(", ")} </p>
             <button class="close-button close text">Close</button>
@@ -64,7 +63,6 @@ async function GetDataCategory(url_category, number_of_movies) {
         for (const movie of data_url["results"]) {
             let response = await fetch(movie.url)
             let data_movie = await response.json()
-            console.log(data_movie)
             data_movies.push(data_movie)
             all_data[data_movie["original_title"]] = data_movie
             if (data_movies.length === number_of_movies) {
@@ -100,6 +98,8 @@ async function FillBestMovie(url_api) {
     h2.textContent = data[0]["title"]
     const short_description = document.querySelector("#big-movie-box .movie-info p")
     short_description.textContent = data[0]["description"]
+
+
     const image = document.querySelector("#big-movie-box img")
     image.src = data[0]["image_url"]
     image.addEventListener("error", function() {
@@ -125,7 +125,6 @@ async function FillGenres(url_api) {
             category_name = select.value
             data = await GetDataCategory(url_api + "?sort_by=-imdb_score&genre=" + category_name, 6)
             await CreateMoviesBox(category_html, data)
-            console.log(all_data)
             })
         }
         else {
@@ -146,4 +145,3 @@ async function FillAllCategories(url_api) {
 
 FillAllCategories("http://localhost:8000/api/v1/titles/")
 ButtonSeeMore()
-ButtonDetails()

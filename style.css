@@ -28,7 +28,6 @@ html {
     "img img"
     "actors actors"
     ;
-    
 }
 
 #modal .top-content { grid-area: top-content ;}
@@ -99,51 +98,6 @@ html {
 #modal img {
     width : 100%
 }
-
-/*
-#modal .top-left {
-    display: flex;
-    flex-direction: column;    
-}
-
-#modal .top-right {
-    align-self: flex-start;
-    justify-self: flex-end;
-}
-
-#modal .bottom {
-    font-weight: 200;
-    font-size: 24px;
-}
-
-#modal h2 {
-    font-size: 48px;
-}
-
-#modal .bold {
-    font-weight: 600;
-}
-
-#directors .directed {
-    font-weight:400;
-    margin-bottom: 0;
-}
-
-#directors .directors-name {
-    margin: 0;
-}
-
-#modal .description {
-    margin-top: 0;
-}
-#modal .image {
-    width : 100%
-}
-
-#modal .top-left p,
-#modal .top-left h2 {
-    margin: 3px;
-} */
 
 button {
     cursor: pointer;
@@ -265,13 +219,12 @@ h2 {
 
 
 .movie-box:nth-child(n+3) {
-        display: none;
-    }
+    display: none;
+}
 
 .movie-list.expanded .movie-box:nth-child(n+3) {
     display: block;
 }
-
 
 .btn-see-more {
     display: flex;
@@ -288,7 +241,6 @@ h2 {
     width: 206px ;
     height: 32px;
 }
-
 
 .transparent-rectangle {
     background-color: rgb(0, 0, 0, 0.5);
@@ -332,7 +284,7 @@ h2 {
 
 }
 
-.others #name {
+.others .name {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -340,7 +292,7 @@ h2 {
 
 }
 
-.others #name .select {
+.others .name .select {
     height: 70px;
     font-size: 36px;
     font-weight: 600;
@@ -489,58 +441,5 @@ h2 {
         height: 32px;
         justify-self: center;
     }
-
-    /* #modal button {
-        background: transparent;
-        border: none;
-        font-size: 30px;
-        align-self: flex-start;
-    }
-
-    #modal .top-content {
-        font-weight: 600;
-        font-size: 24px;
-    }
-
-    #modal .top-content * {
-        margin: 6px;
-    }
-
-    #modal h2 {
-        font-size: 48px;
-    }
-
-    #modal p {
-        font-size: 24px;
-    }
-
-    #modal .directors .directed {
-        font-weight: 400;
-    }
-
-    #modal .directors .directors-name,
-    #modal .description,
-    #modal .actors {
-        font-weight: 300;
-    }
-
-    #modal .directors .directed,
-    #modal .directors .directors-name {
-        margin-bottom: 7px ;
-    }
-
-    #modal .directors .directors-name,
-    #modal .description {
-        margin-top: 7px ;
-    }
-
-
-    #modal .cross-button {
-        justify-self: flex-end;
-    }
-
-    #modal img {
-        width : 100%
-    } */
-    
+ 
 }
