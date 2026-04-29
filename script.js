@@ -5,9 +5,7 @@ document.addEventListener("click", (event) => {
         modal_html = document.getElementById('modal')
         modal_html.classList.add('active')
         const button = event.target;
-        // remonter au parent (.transparent-rectangle)
         const parent = button.parentElement;
-        // récupérer le titre dans ce parent
         const title = parent.querySelector(".title");
         let data_movie = all_data[title.textContent]
         modal_html.innerHTML = `
@@ -91,7 +89,6 @@ async function CreateMoviesBox(genre_html, data_movies) {
     }
 }
 
-
 async function FillBestMovie(url_api) {
     const data = await GetDataCategory(url_api + "?sort_by=-imdb_score", 1)
     const h2 = document.querySelector("#big-movie-box .movie-info h2")
@@ -115,24 +112,23 @@ async function FillTopRatedMovies(url_api) {
 }
 
 async function FillGenres(url_api) {
-    const categories_html = document.querySelectorAll(".genre")    
-    for (const category_html of categories_html) {
-        let category_name
-        if (category_html.classList.contains("others")) {
-            const select = category_html.querySelector(".select")
-            category_name = select.value
+    const genres_html = document.querySelectorAll(".genre")    
+    for (const genre_html of genres_html) {
+        let genre_name
+        if (genre_html.classList.contains("others")) {
+            const select = genre_html.querySelector(".select")
+            genre_name = select.value
             select.addEventListener("change", async function() {
-            category_name = select.value
-            data = await GetDataCategory(url_api + "?sort_by=-imdb_score&genre=" + category_name, 6)
-            await CreateMoviesBox(category_html, data)
+            genre_name = select.value
+            data = await GetDataCategory(url_api + "?sort_by=-imdb_score&genre=" + genre_name, 6)
+            await CreateMoviesBox(genre_html, data)
             })
         }
         else {
-            category_name = category_html.id
+            genre_name = genre_html.id
         }
-        data = await GetDataCategory(url_api + "?sort_by=-imdb_score&genre=" + category_name, 6)
-        await CreateMoviesBox(category_html, data)
-
+        data = await GetDataCategory(url_api + "?sort_by=-imdb_score&genre=" + genre_name, 6)
+        await CreateMoviesBox(genre_html, data)
     }
 }
 
@@ -141,7 +137,6 @@ async function FillAllCategories(url_api) {
     await FillTopRatedMovies(url_api)
     await FillGenres(url_api)
 }
-
 
 FillAllCategories("http://localhost:8000/api/v1/titles/")
 ButtonSeeMore()
